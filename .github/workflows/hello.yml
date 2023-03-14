@@ -31,5 +31,5 @@ jobs:
       - name: Show value of TEST_SECRET
         run: echo ${{ secrets.TEST_SECRET }}
       - name: Run my JavaScript file
-        run: node ../actions/test.js ${{ secrets.TEST_SECRET }}
+        run: node actions/test.js ${{ secrets.TEST_SECRET }}
 
