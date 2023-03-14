@@ -1,1 +1,2 @@
-document.getElementById('secret').textContent = secret;
+document.getElementById('secret').text = secret;
+console.log(secret);
