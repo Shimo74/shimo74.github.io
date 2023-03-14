@@ -1,19 +1,35 @@
-# .github/workflows/hello.yml
+# # .github/workflows/hello.yml
 
-name: Hello
-on: push
-env:
-  SECRET_HOGE_1: ${{secrets.SECRET_HOGE}} ## ※1
+# name: Hello
+# on: push
+# env:
+#   SECRET_HOGE_1: ${{secrets.SECRET_HOGE}} ## ※1
+# jobs:
+#   hello:
+#     runs-on: ubuntu-latest
+#     name: Hello
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+# #         with:
+# #           node-version: '16'
+#       - name: run hello action
+#         env:
+#           SECRET_HOGE_2: ${{secrets.SECRET_HOGE}}  ## ※2
+#         uses: ./.github/actions/hello
+name: My Workflow
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  hello:
+  my_job:
     runs-on: ubuntu-latest
-    name: Hello
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-#         with:
-#           node-version: '16'
-      - name: run hello action
-        env:
-          SECRET_HOGE_2: ${{secrets.SECRET_HOGE}}  ## ※2
-        uses: ./.github/actions/hello
+      - name: Show value of TEST_SECRET
+        run: echo ${{ secrets.TEST_SECRET }}
+      - name: Run my JavaScript file
+        run: node test.js ${{ secrets.TEST_SECRET }}
+
