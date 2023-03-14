@@ -1,1 +1,1 @@
-console.log(process.env.TEST_SECRET);
+console.log(process.env.SECRET_HOGE_1);
