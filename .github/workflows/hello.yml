@@ -10,7 +10,9 @@ jobs:
     name: Hello
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+#         with:
+#           node-version: '16'
       - name: run hello action
         env:
           SECRET_HOGE_2: ${{secrets.SECRET_HOGE}}  ## ※2
