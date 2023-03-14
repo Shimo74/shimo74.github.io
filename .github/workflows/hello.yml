@@ -10,7 +10,7 @@ jobs:
     name: Hello
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       - name: run hello action
         env:
           SECRET_HOGE_2: ${{secrets.SECRET_HOGE}}  ## ※2
