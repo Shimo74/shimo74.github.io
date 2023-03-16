@@ -1,2 +1,2 @@
-document.getElementById('secret').textContext = secret;
+document.getElementById('secret-h2').textContext = secret;
 console.log(secret);
